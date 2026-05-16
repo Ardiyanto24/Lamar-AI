@@ -1,0 +1,162 @@
+# lamar.ai — Development Progress Tracker
+
+> This file is auto-updated by Claude Code at the end of every session via the Stop hook.
+> It can also be edited manually at any time — manual edits take precedence.
+> Do NOT put architecture or design decisions here — those belong in docs/.
+> This file tracks only: what is done, what is in progress, and what was decided during coding.
+>
+> **Team:**
+> - **Backend:** Backend, AI pipeline, database — Railway + Supabase
+> - **Frontend:** Frontend, UI, desain web — Vercel
+
+---
+
+## Current Focus
+
+Wave 1 fondasi selesai. Lanjut ke: `backend/config.py`, `backend/main.py`, dan migration SQL (001–010).
+
+---
+
+## Team Coordination Log
+
+<!-- Sinyal antar Backend dan Frontend -->
+<!-- Format: [date] Backend→Frontend atau Frontend→Backend — pesan -->
+
+---
+
+## Implementation Status
+
+### Foundation
+
+| Component | Status | Owner | Notes |
+|---|---|---|---|
+| Monorepo structure              | [ ] Not started | Backend+Frontend | |
+| Backend entry point (`main.py`) | [ ] Not started | Backend | CORS, rate limiter, Sentry, routers |
+| `backend/config.py` (Settings)  | [ ] Not started | Backend | pydantic-settings, semua env var |
+| `backend/requirements.txt`      | [ ] Not started | Backend | |
+| Frontend entry point (Next.js)  | [ ] Not started | Frontend | App Router, TypeScript, Tailwind |
+| Environment variables setup     | [ ] Not started | Backend+Frontend | |
+| `backend/scripts/seed_dev_data.py` | [ ] Not started | Backend | Isi profil dummy + 1 lamaran sample untuk dev/test tanpa input manual |
+| `backend/scripts/test_workflow.py` | [ ] Not started | Backend | CLI script full workflow end-to-end — verifikasi BE mandiri tanpa FE |
+
+### Database Migrations
+
+| File | Status | Owner | Notes |
+|---|---|---|---|
+| `001_initial_schema.sql` | [ ] Not started | Backend | |
+| `002_gap_analysis_schema.sql`   | [ ] Not started | Backend | |
+| `003_strategy_schema.sql`       | [ ] Not started | Backend | |
+| `004_cv_output_schema.sql`        | [ ] Not started | Backend | |
+| `005_tier_and_billing.sql`        | [ ] Not started | Backend | |
+| `006_rls_policies.sql`        | [ ] Not started | Backend | |
+| `007_triggers.sql`        | [ ] Not started | Backend | |
+| `008_indexes.sql`        | [ ] Not started | Backend | |
+| `009_langgraph_checkpoint.sql`        | [ ] Not started | Backend | ⚠️ Wajib ada sebelum backend pertama kali dijalankan |
+| `010_contact_and_qc.sql`        | [ ] Not started | Backend | |
+
+> [WARNING] Only mark a migration as [x] Done after it has been successfully applied to the local Supabase instance.
+
+### Backend — Infrastructure
+
+| Component | Status | Owner | Notes |
+|---|---|---|---|
+| Supabase client (`db/supabase.py`) | [ ] Not started | Backend | |
+| LangChain ChatModel factory (`models/llm.py`) | [ ] Not started | Backend | |
+| Model router (`models/router.py`) | [ ] Not started | Backend | |
+| LangGraph state schema (`workflow/state.py`) | [ ] Not started | Backend | |
+| LangGraph graph definition (`workflow/graph.py`) | [ ] Not started | Backend | |
+| JWT middleware (`middleware/auth.py`) | [ ] Not started | Backend | |
+| Rate limit middleware (`middleware/rate_limit.py`) | [ ] Not started | Backend | |
+
+### Backend — Routers
+
+| Router | Status | Owner | Notes |
+|---|---|---|---|
+| `auth.py` | [ ] Not started | Backend | POST /register, POST /login, POST /logout, GET /me, POST /refresh |
+| `profile.py` | [ ] Not started | Backend | 7 komponen CRUD + inferred-skills |
+| `applications.py` | [ ] Not started | Backend | CRUD lamaran + tier check |
+| `workflow.py` | [ ] Not started | Backend | start, resume, status, stream (SSE) |
+| `output.py` | [ ] Not started | Backend | render, download — **Frontend tidak bisa mulai /download sebelum ini selesai** |
+| `admin.py` | [ ] Not started | Backend | PATCH tier, GET/PATCH upgrade-requests |
+| `settings.py` | [ ] Not started | Backend | PATCH /settings/profile, POST /settings/change-password |
+| `upgrade.py` | [ ] Not started | Backend | POST /upgrade/request |
+
+### Backend — Agents
+
+| Agent | Cluster | Status | Prompt Written | Unit Test | Notes |
+|---|---|---|---|---|---|
+| `profile_ingestion.py` | C1 | [ ] Not started | [ ] | [ ] | |
+| `parser.py` | C2 | [ ] Not started | [ ] | [ ] | |
+| `gap_analyzer.py` | C3 | [ ] Not started | [ ] | [ ] | |
+| `scoring.py` | C3 | [ ] Not started | [ ] | [ ] | |
+| `planner.py` | C4 | [ ] Not started | [ ] | [ ] | |
+| `selection.py` | C4 | [ ] Not started | [ ] | [ ] | |
+| `revision_handler.py` | C4 | [ ] Not started | [ ] | [ ] | Pure Python — no LLM |
+| `content_writer.py` | C5 | [ ] Not started | [ ] | [ ] | |
+| `skills_grouping.py` | C5 | [ ] Not started | [ ] | [ ] | |
+| `summary_writer.py` | C5 | [ ] Not started | [ ] | [ ] | Selalu dipanggil terakhir di Phase 2 |
+| `ats_scoring.py` | C6 | [ ] Not started | [ ] | [ ] | |
+| `semantic_reviewer.py` | C6 | [ ] Not started | [ ] | [ ] | Parallel dengan ATS |
+
+### Backend — Renderer
+
+| Component | Status | Owner | Notes |
+|---|---|---|---|
+| `document_renderer.py` | [ ] Not started | Backend | |
+| `pdf_renderer.py` | [ ] Not started | Backend | WeasyPrint |
+| `docx_renderer.py` | [ ] Not started | Backend | python-docx |
+| CV template — Indonesian (`cv_id.html` + `cv_id.docx`) | [ ] Not started | Backend | Lihat `15_cv_template_specification.md` |
+| CV template — English (`cv_en.html` + `cv_en.docx`) | [ ] Not started | Backend | |
+
+### Frontend — Pages
+
+| Page | Status | Owner | Notes |
+|---|---|---|---|
+| `/login` | [ ] Not started | Frontend | |
+| `/register` | [ ] Not started | Frontend | |
+| `/dashboard` | [ ] Not started | Frontend | |
+| `/profile` | [ ] Not started | Frontend | |
+| `/settings` | [ ] Not started | Frontend | Butuh `settings.py` router dari Backend |
+| `/upgrade` | [ ] Not started | Frontend | Butuh `upgrade.py` router dari Backend |
+| `/apply/new` | [ ] Not started | Frontend | |
+| `/apply/[id]/gap` — Interrupt 1 | [ ] Not started | Frontend | Bisa dimulai setelah BE-4 checkpoint |
+| `/apply/[id]/brief` — Interrupt 2 | [ ] Not started | Frontend | Bisa dimulai setelah BE-4 checkpoint |
+| `/apply/[id]/cv` — Interrupt 3 | [ ] Not started | Frontend | Bisa dimulai setelah BE-4 checkpoint |
+| `/apply/[id]/download` | [ ] Not started | Frontend | **Menunggu sinyal Backend: output.py + renderer selesai** |
+
+### Frontend — Core
+
+| Component | Status | Owner | Notes |
+|---|---|---|---|
+| API client (`lib/api.ts`) | [ ] Not started | Frontend | |
+| Supabase client (`lib/supabase.ts`) | [ ] Not started | Frontend | |
+| `useAuth` hook | [ ] Not started | Frontend | |
+| `useTier` hook | [ ] Not started | Frontend | |
+| `useWorkflowStream` hook | [ ] Not started | Frontend | SSE hook untuk progress workflow |
+| Route middleware (`middleware.ts`) | [ ] Not started | Frontend | Proteksi route, redirect ke /login jika no session |
+
+---
+
+## Open Technical Decisions
+
+<!-- Decisions made during coding that are not yet in docs/ -->
+<!-- Format: [date] topic — decision made — reason -->
+
+---
+
+## Known Issues & Gotchas
+
+<!-- Bugs found, workarounds applied, things that behaved unexpectedly -->
+<!-- Format: [date] file/component — what happened — how it was resolved or current status -->
+
+---
+
+## Session Log
+
+<!-- Auto-appended by Stop hook at the end of each session -->
+<!-- Format: [date] — summary of what was done -->
+[2026-05-17 05:25] — Session with no file writes (planning, review, or Q&A).
+[2026-05-17 05:26] — Session with no file writes (planning, review, or Q&A).
+[2026-05-17 05:30] — Session with no file writes (planning, review, or Q&A).
+[2026-05-17 05:31] — Session with no file writes (planning, review, or Q&A).
+[2026-05-17 05:34] — Session with no file writes (planning, review, or Q&A).
