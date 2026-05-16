@@ -43,16 +43,16 @@ Migration SQL 001–010 selesai ditulis. Lanjut ke: jalankan migration ke Supaba
 
 | File | Status | Owner | Notes |
 |---|---|---|---|
-| `001_initial_schema.sql` | [ ] Not started | Backend | |
-| `002_gap_analysis_schema.sql`   | [ ] Not started | Backend | |
-| `003_strategy_schema.sql`       | [ ] Not started | Backend | |
-| `004_cv_output_schema.sql`        | [ ] Not started | Backend | |
-| `005_tier_and_billing.sql`        | [ ] Not started | Backend | |
-| `006_rls_policies.sql`        | [ ] Not started | Backend | |
-| `007_triggers.sql`        | [ ] Not started | Backend | |
-| `008_indexes.sql`        | [ ] Not started | Backend | |
-| `009_langgraph_checkpoint.sql`        | [ ] Not started | Backend | ⚠️ Wajib ada sebelum backend pertama kali dijalankan |
-| `010_contact_and_qc.sql`        | [ ] Not started | Backend | |
+| `001_initial_schema.sql` | [~] Written | Backend | users, 7 Master Data, applications, job_postings, job_requirements |
+| `002_gap_analysis_schema.sql`   | [~] Written | Backend | gap_analysis_results, gap_analysis_scores |
+| `003_strategy_schema.sql`       | [~] Written | Backend | cv_strategy_briefs, selected_content_packages, revision_history |
+| `004_cv_output_schema.sql`        | [~] Written | Backend | cv_outputs, qc_results, qc_overall_scores |
+| `005_tier_and_billing.sql`        | [~] Written | Backend | ALTER users (tier), upgrade_requests |
+| `006_rls_policies.sql`        | [~] Written | Backend | RLS Pola A (10 tabel user_id) + Pola B (10 tabel via application_id) |
+| `007_triggers.sql`        | [~] Written | Backend | handle_new_user(), on_auth_user_created |
+| `008_indexes.sql`        | [~] Written | Backend | 22 index semua cluster + partial index workflow_active |
+| `009_langgraph_checkpoint.sql`        | [~] Written | Backend | ⚠️ Wajib ada sebelum backend pertama kali dijalankan |
+| `010_contact_and_qc.sql`        | [~] Written | Backend | ADD COLUMN IF NOT EXISTS — phone_number, linkedin_url, github_url, section_approvals, is_workflow_active |
 
 > [WARNING] Only mark a migration as [x] Done after it has been successfully applied to the local Supabase instance.
 
