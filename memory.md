@@ -30,12 +30,12 @@ Wave 1 fondasi selesai. Lanjut ke: `backend/config.py`, `backend/main.py`, dan m
 
 | Component | Status | Owner | Notes |
 |---|---|---|---|
-| Monorepo structure              | [ ] Not started | Backend+Frontend | |
+| Monorepo structure              | [x] Done | Backend+Frontend | Semua subdirektori + `__init__.py` / `.gitkeep` dibuat |
 | Backend entry point (`main.py`) | [ ] Not started | Backend | CORS, rate limiter, Sentry, routers |
 | `backend/config.py` (Settings)  | [ ] Not started | Backend | pydantic-settings, semua env var |
-| `backend/requirements.txt`      | [ ] Not started | Backend | |
+| `backend/requirements.txt`      | [x] Done | Backend | 18 dependency |
 | Frontend entry point (Next.js)  | [ ] Not started | Frontend | App Router, TypeScript, Tailwind |
-| Environment variables setup     | [ ] Not started | Backend+Frontend | |
+| Environment variables setup     | [x] Done | Backend+Frontend | `.env.example` lengkap 31 var, `.gitignore` dikonfigurasi |
 | `backend/scripts/seed_dev_data.py` | [ ] Not started | Backend | Isi profil dummy + 1 lamaran sample untuk dev/test tanpa input manual |
 | `backend/scripts/test_workflow.py` | [ ] Not started | Backend | CLI script full workflow end-to-end — verifikasi BE mandiri tanpa FE |
 
