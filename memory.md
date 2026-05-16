@@ -160,3 +160,4 @@ Wave 1 fondasi selesai. Lanjut ke: `backend/config.py`, `backend/main.py`, dan m
 [2026-05-17 05:30] — Session with no file writes (planning, review, or Q&A).
 [2026-05-17 05:31] — Session with no file writes (planning, review, or Q&A).
 [2026-05-17 05:34] — Session with no file writes (planning, review, or Q&A).
+[2026-05-17] — Wave 1 fondasi selesai: monorepo structure (31 files, `__init__.py` + `.gitkeep`), `.gitignore`, `.env.example` (31 var, 11 blok), `railway.toml`, `backend/requirements.txt` (18 dep), `.github/workflows/ci.yml` (3 jobs, TODO steps), git init + push ke GitHub (`Ardiyanto24/Lamar-AI`), branch `main` dan `develop` aktif di remote.
