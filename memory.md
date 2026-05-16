@@ -13,7 +13,7 @@
 
 ## Current Focus
 
-Wave 1 fondasi selesai. Lanjut ke: `backend/config.py`, `backend/main.py`, dan migration SQL (001–010).
+Migration SQL 001–010 selesai ditulis. Lanjut ke: jalankan migration ke Supabase, lalu `backend/config.py` dan `backend/main.py`.
 
 ---
 
