@@ -13,7 +13,7 @@
 
 ## Current Focus
 
-Frontend foundation selesai (Next.js scaffold, struktur folder, lib/supabase.ts, lib/api.ts). Lanjut ke: `middleware.ts` (route protection), `useAuth` hook, lalu halaman login dan register.
+Auth layer dan UI dasar selesai (`useAuth`, `AuthContext`, route protection via `proxy.ts`, 6 komponen `components/ui/`). Lanjut ke: halaman `/login` dan `/register`, lalu `useTier` hook.
 
 ---
 
