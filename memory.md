@@ -13,7 +13,7 @@
 
 ## Current Focus
 
-Auth layer dan UI dasar selesai (`useAuth`, `AuthContext`, route protection via `proxy.ts`, 6 komponen `components/ui/`). Lanjut ke: halaman `/login` dan `/register`, lalu `useTier` hook.
+Auth pages selesai (`/login`, `/register`, auth layout, `LoginForm`, `RegisterForm`). Build production berhasil tanpa error TypeScript. Lanjut ke: `useTier` hook, lalu halaman `/dashboard`.
 
 ---
 
