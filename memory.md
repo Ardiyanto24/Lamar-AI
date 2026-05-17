@@ -130,10 +130,11 @@ Auth layer dan UI dasar selesai (`useAuth`, `AuthContext`, route protection via 
 |---|---|---|---|
 | API client (`lib/api.ts`) | [x] Done | Frontend | ApiError class, apiClient dengan interceptor 401 (refresh→retry→redirect) dan 403 TIER_LIMIT_REACHED (dispatch event), helper api.get/post/patch/delete |
 | Supabase client (`lib/supabase.ts`) | [x] Done | Frontend | Singleton createBrowserClient via @supabase/ssr; env var NEXT_PUBLIC_SUPABASE_URL + ANON_KEY |
-| `useAuth` hook | [ ] Not started | Frontend | |
+| `useAuth` hook | [x] Done | Frontend | `lib/hooks/useAuth.ts` — User interface, login/logout, GET /auth/me saat mount; 401 ditangani diam-diam |
+| `AuthContext` | [x] Done | Frontend | `lib/context/AuthContext.tsx` — AuthProvider + useAuthContext; dipasang di `app/layout.tsx` |
 | `useTier` hook | [ ] Not started | Frontend | |
 | `useWorkflowStream` hook | [ ] Not started | Frontend | SSE hook untuk progress workflow |
-| Route middleware (`middleware.ts`) | [ ] Not started | Frontend | Proteksi route, redirect ke /login jika no session |
+| Route protection (`proxy.ts`) | [x] Done | Frontend | ⚠️ Next.js 16 breaking change: `middleware.ts` → `proxy.ts`, fungsi `middleware` → `proxy`; proteksi route via @supabase/ssr createServerClient; redirect ke /login?return_url=... jika no session |
 
 ---
 
