@@ -163,6 +163,7 @@ Auth layer dan UI dasar selesai (`useAuth`, `AuthContext`, route protection via 
 
 <!-- Bugs found, workarounds applied, things that behaved unexpectedly -->
 <!-- Format: [date] file/component — what happened — how it was resolved or current status -->
+[2026-05-17] Next.js 16 — `middleware.ts` deprecated, diganti `proxy.ts` dengan fungsi `proxy` (bukan `middleware`). File dibuat sebagai `frontend/proxy.ts`. Jika menggunakan nama lama, Next.js 16 akan mengabaikannya tanpa error.
 
 ---
 
