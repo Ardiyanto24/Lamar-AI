@@ -108,6 +108,20 @@ Auth layer dan UI dasar selesai (`useAuth`, `AuthContext`, route protection via 
 | CV template — Indonesian (`cv_id.html` + `cv_id.docx`) | [ ] Not started | Backend | Lihat `15_cv_template_specification.md` |
 | CV template — English (`cv_en.html` + `cv_en.docx`) | [ ] Not started | Backend | |
 
+### Frontend — UI Components (`components/ui/`)
+
+| Component | Status | Notes |
+|---|---|---|
+| `Button.tsx` | [x] Done | variant: primary/secondary/destructive; size: sm/md/lg; isLoading spinner; disabled |
+| `Input.tsx` | [x] Done | label, error (border merah), helperText, aria-invalid + aria-describedby |
+| `Textarea.tsx` | [x] Done | Sama dengan Input + showCounter ({current}/{maxLength} pojok kanan bawah), rows, maxLength |
+| `Card.tsx` | [x] Done | optional header (border-b) + footer (border-t) |
+| `Badge.tsx` | [x] Done | variant: success/warning/error/neutral/info |
+| `Modal.tsx` | [x] Done | overlay backdrop, tutup via klik overlay atau Escape, role="dialog" aria-modal |
+| `index.ts` | [x] Done | Re-export semua 6 komponen |
+| `Toast` | [ ] Not started | |
+| `Skeleton` | [ ] Not started | |
+
 ### Frontend — Pages
 
 | Page | Status | Owner | Notes |
