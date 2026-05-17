@@ -13,7 +13,7 @@
 
 ## Current Focus
 
-Migration SQL 001–010 selesai ditulis. Lanjut ke: jalankan migration ke Supabase, lalu `backend/config.py` dan `backend/main.py`.
+Frontend foundation selesai (Next.js scaffold, struktur folder, lib/supabase.ts, lib/api.ts). Lanjut ke: `middleware.ts` (route protection), `useAuth` hook, lalu halaman login dan register.
 
 ---
 
