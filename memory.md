@@ -126,8 +126,8 @@ Auth pages selesai (`/login`, `/register`, auth layout, `LoginForm`, `RegisterFo
 
 | Page | Status | Owner | Notes |
 |---|---|---|---|
-| `/login` | [ ] Not started | Frontend | |
-| `/register` | [ ] Not started | Frontend | |
+| `/login` | [x] Done | Frontend | `LoginForm` + page + auth layout; redirect ke `return_url` atau `/dashboard`; error 403 → resend verification; error 401 → pesan netral |
+| `/register` | [x] Done | Frontend | `RegisterForm` + page; validasi inline per-field; sukses → konfirmasi email inline (tidak redirect); 422 → error di field email |
 | `/dashboard` | [ ] Not started | Frontend | |
 | `/profile` | [ ] Not started | Frontend | |
 | `/settings` | [ ] Not started | Frontend | Butuh `settings.py` router dari Backend |
