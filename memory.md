@@ -34,7 +34,7 @@ Frontend foundation selesai (Next.js scaffold, struktur folder, lib/supabase.ts,
 | Backend entry point (`main.py`) | [ ] Not started | Backend | CORS, rate limiter, Sentry, routers |
 | `backend/config.py` (Settings)  | [ ] Not started | Backend | pydantic-settings, semua env var |
 | `backend/requirements.txt`      | [x] Done | Backend | 18 dependency |
-| Frontend entry point (Next.js)  | [ ] Not started | Frontend | App Router, TypeScript, Tailwind |
+| Frontend entry point (Next.js)  | [x] Done | Frontend | `create-next-app` TypeScript + Tailwind + App Router; boilerplate dibersihkan; semua folder + placeholder page.tsx dibuat |
 | Environment variables setup     | [x] Done | Backend+Frontend | `.env.example` lengkap 31 var, `.gitignore` dikonfigurasi |
 | `backend/scripts/seed_dev_data.py` | [ ] Not started | Backend | Isi profil dummy + 1 lamaran sample untuk dev/test tanpa input manual |
 | `backend/scripts/test_workflow.py` | [ ] Not started | Backend | CLI script full workflow end-to-end — verifikasi BE mandiri tanpa FE |
