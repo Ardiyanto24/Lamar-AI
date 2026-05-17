@@ -149,6 +149,10 @@ Auth pages selesai (`/login`, `/register`, auth layout, `LoginForm`, `RegisterFo
 | `useTier` hook | [ ] Not started | Frontend | |
 | `useWorkflowStream` hook | [ ] Not started | Frontend | SSE hook untuk progress workflow |
 | Route protection (`proxy.ts`) | [x] Done | Frontend | ⚠️ Next.js 16 breaking change: `middleware.ts` → `proxy.ts`, fungsi `middleware` → `proxy`; proteksi route via @supabase/ssr createServerClient; redirect ke /login?return_url=... jika no session |
+| Auth layout (`app/(auth)/layout.tsx`) | [x] Done | Frontend | Wrapper `bg-gray-50` + centering untuk `/login` dan `/register`; tidak ada header navigasi |
+| Root layout (`app/layout.tsx`) | [x] Done | Frontend | `AuthProvider` dipasang; metadata diupdate: title "lamar.ai", description ringkas; Geist font; globals.css |
+| `LoginForm` | [x] Done | Frontend | `components/auth/LoginForm.tsx`; state: email, password, isLoading, error, showResendVerification; `<Suspense>` wrapper karena `useSearchParams` |
+| `RegisterForm` | [x] Done | Frontend | `components/auth/RegisterForm.tsx`; validasi frontend inline per-field (nama, email regex, password ≥8 char); sukses → state `isSuccess` ganti form dengan konfirmasi |
 
 ---
 
