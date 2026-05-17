@@ -128,8 +128,8 @@ Frontend foundation selesai (Next.js scaffold, struktur folder, lib/supabase.ts,
 
 | Component | Status | Owner | Notes |
 |---|---|---|---|
-| API client (`lib/api.ts`) | [ ] Not started | Frontend | |
-| Supabase client (`lib/supabase.ts`) | [ ] Not started | Frontend | |
+| API client (`lib/api.ts`) | [x] Done | Frontend | ApiError class, apiClient dengan interceptor 401 (refresh→retry→redirect) dan 403 TIER_LIMIT_REACHED (dispatch event), helper api.get/post/patch/delete |
+| Supabase client (`lib/supabase.ts`) | [x] Done | Frontend | Singleton createBrowserClient via @supabase/ssr; env var NEXT_PUBLIC_SUPABASE_URL + ANON_KEY |
 | `useAuth` hook | [ ] Not started | Frontend | |
 | `useTier` hook | [ ] Not started | Frontend | |
 | `useWorkflowStream` hook | [ ] Not started | Frontend | SSE hook untuk progress workflow |
